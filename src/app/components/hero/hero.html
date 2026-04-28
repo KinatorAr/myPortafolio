@@ -1,0 +1,39 @@
+<section class="contenedor">
+  <div class="hero-section">
+    <div class="hero-content">
+      <h1>Arturo Serrano</h1>
+      <h2>Desarrollador Freelance</h2>
+      <p>Diseño páginas web modernas y profesionales para ayudarte a vender más y verte mejor en internet.</p>
+      <div class="hero-btn">
+        <a routerLink="/modelos">
+          <span>Ver Modelos</span>
+        </a>
+        <a routerLink="/contacto">
+          <span>Contáctame</span>
+        </a>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="orbit-wrapper">
+        <div class="planet"></div>
+          <div class="planet-image">
+            <img src="../../assets/img/Gemini_Generated_Image_ezsb4mezsb4mezsb - copia.jpg" alt="Arturo Serrano" />
+          </div>
+        <div class="orbit-ring">
+          @for (dot of orbitDots; track $index) {
+            <div
+              class="icon-dot"
+              [style.left.px]="dot.x"
+              [style.top.px]="dot.y"
+            >
+              <div
+                class="counter-rotate"
+                [innerHTML]="dot.icon"
+              ></div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

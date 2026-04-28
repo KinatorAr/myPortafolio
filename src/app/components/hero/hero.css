@@ -1,0 +1,136 @@
+
+/*Selectores*/
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.hero-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  margin: 5rem 0;
+}
+.hero-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.hero-btn a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #287233;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 1.4rem 2rem;
+  color: #ffffff;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  transition: background-color .3s ease-out;
+}
+
+.hero-btn a:hover {
+  background-color: #0f5f22;
+  cursor: pointer;
+}
+
+.btn-icon {
+  font-size: 1.6rem;
+}
+
+.hero-content{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-content h1{
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+}
+.hero-content h2{
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.hero-content p{
+  font-size: 2rem;
+}
+
+/*animation*/
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  min-height: 340px;
+}
+
+.orbit-wrapper {
+  position: relative;
+  width: 360px;
+  height: 360px;
+}
+
+.planet {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px solid #287233;
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  animation: spin 12s linear infinite;
+}
+
+.icon-dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4d4d4d;
+  border: 0.5px solid #4d4d4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-rotate {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 12s linear infinite reverse;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/*icon img*/
+.planet-image {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  /* margen para que no toque el borde verde */
+  margin: 12px;
+}
+
+.planet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,0 +1,116 @@
+html {
+  scroll-behavior: smooth;
+}
+/*Globales*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*Se agrega para utilizar Rems, 1Rem = 10px*/
+}
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+h1,h2 , h3{
+    font-optical-sizing: auto;
+    margin: 0 0 0.5rem 0;
+    font-weight: 300;
+}
+h1{
+    font-size: 5rem;
+    font-weight: 300;
+}
+h2{
+    font-size: 4rem;
+    font-weight: 300;
+}
+h3{
+    font-size: 3rem;
+    font-weight: 300;
+}
+p{
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+}
+a{
+    font-size: 1.7rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: #000000;
+    padding: 0.5rem 0rem;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Splash Screen */
+  #splash-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:9999;
+
+    text-align:center;
+    /* background:linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%); */
+    background-color: #fff;
+    color:#555;
+    font-weight:300;
+    font-size:32px;
+    padding-top:40vh;
+    overflow:hidden;
+  }
+
+  #splash-screen div{
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+
+  #splash-screen div:first-of-type{
+    animation: showup 7s infinite;
+  }
+
+  #splash-screen div:last-of-type{
+    width:0px;
+    animation: reveal 7s infinite;
+  }
+
+  #splash-screen div:last-of-type span{
+    margin-left:-355px;
+    animation: slidein 7s infinite;
+  }
+
+  /* animaciones */
+  @keyframes showup {
+  0%{opacity:0;}
+  20%{opacity:1;}
+  80%{opacity:1;}
+  100%{opacity:0;}
+  }
+
+  @keyframes slidein {
+  0%{margin-left:-800px;}
+  20%{margin-left:-800px;}
+  35%{margin-left:0px;}
+  100%{margin-left:0px;}
+  }
+
+  @keyframes reveal {
+  0%{opacity:0;width:0px;}
+  20%{opacity:1;width:0px;}
+  30%{width:295px;}
+  80%{opacity:1;}
+  100%{opacity:0;width:295px;}
+  }
