@@ -1,0 +1,180 @@
+/*Selectores*/
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.about-header {
+  margin-bottom: 2.5rem;
+}
+
+.about-header h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 0;
+  color: #000;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #287233;
+  margin-bottom: 0.5rem;
+}
+
+.contact-wrapper {
+  margin-top: 5.5rem;
+  margin-bottom: 10rem;
+}
+
+.profile-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 0;
+}
+
+.profile-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.icon-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.item-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #000;
+  margin: 0 0 4px;
+}
+
+.item-text {
+  font-size: 1.3rem;
+  color: #000;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/*grid*/
+.contact-seccion{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+}
+
+/*formulario*/
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 1rem;
+  border-radius: 0.2rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  resize: none;
+}
+
+.form-group textarea {
+  height: 15rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-submit {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #287233;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 1.4rem 2rem;
+  color: #ffffff;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  transition: background-color .3s ease-out;
+}
+
+.btn-submit:hover {
+  background-color: #0f5f22;
+  cursor: pointer;
+}
+
+.btn-submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  border: none;
+  gap: 0.8rem;
+  background-color: #25D366;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.5rem;
+  transition: background-color .3s ease-out;
+}
+
+.btn-whatsapp:hover {
+  background-color: #128C7E;
+  transition: background-color .3s ease-out;
+}
+
+.btn-submit:focus,
+.btn-whatsapp:focus {
+  outline: none;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 1rem;
+  border-radius: 0.2rem;
+  font-family: inherit;
+  font-size: 1.3rem;
+  border: 1px solid #000;
+}
+.icons{
+  margin: 2rem auto;
+}

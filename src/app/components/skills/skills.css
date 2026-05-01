@@ -1,0 +1,73 @@
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.about-header {
+  margin-bottom: 2.5rem;
+}
+
+.about-header h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 0;
+  color: #000;
+}
+
+.eyebrow {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #287233;
+  margin-bottom: 0.5rem;
+}
+
+.skills-wrapper {
+  margin-top: 5.5rem;
+}
+
+.unified-card {
+  border: 1.5px solid #000;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.col {
+  padding: 2rem 1.75rem;
+}
+
+.col:not(:last-child) {
+  border-right: 1.5px solid #000;
+}
+
+.col-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0 0 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 0;
+}
+
+.skill-item:not(:last-child) {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+
+.skill-name {
+  font-size: 1.4rem;
+  color: #000;
+}
