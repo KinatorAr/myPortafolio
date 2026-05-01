@@ -1,0 +1,14 @@
+.contenedor-footer{
+  background-color: #fff;
+  border-top: 1px solid #000000;
+}
+.contenedor{
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.text-muted{
+  color: #000000;
+  text-align: center;
+  padding: 2rem 0rem;
+  font-size: 1.6rem;
+}
