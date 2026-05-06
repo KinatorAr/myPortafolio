@@ -9,6 +9,7 @@ import { Footer } from '../../components/footer/footer';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [About, Contact, Hero, Models, Skills, Nav, Footer],
   templateUrl: './home.html',
   styleUrl: './home.css',
