@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -6,6 +6,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   imports: [ReactiveFormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Contact {
   contactoForm: FormGroup;
@@ -21,12 +22,14 @@ export class Contact {
   enviarMensaje() {
     if (this.contactoForm.valid) {
       console.log('Datos del formulario:', this.contactoForm.value);
-      // Aquí podrías integrar un servicio para enviar el correo
+      // Aquí integrar un servicio para enviar el correo
+      alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
+      this.contactoForm.reset();
     }
   }
 
   irAWhatsApp() {
-    const telefono = "5212212940553"; // Tu número sin espacios
+    const telefono = "5212212940553";
     const mensaje = "Hola, vi tu portafolio y me gustaría platicar sobre un proyecto.";
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');

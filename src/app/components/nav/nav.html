@@ -1,9 +1,32 @@
-<header class="contenedor-navegacion">
-  <nav class="nav-principal contenedor">
-    <a class="enlace" href="">Inicio</a>
-    <a class="enlace" href="">Sobre mí</a>
-    <a class="enlace" href="">Habilidades</a>
-    <a class="enlace" href="">Proyectos</a>
-    <a class="enlace" href="">Contacto</a>
-  </nav>
+<header class="contenedor-navegacion sticky-activo" >
+  <div class="header-content contenedor">
+    <button class="btn-menu" (click)="toggleMenu()" aria-label="Abrir menú">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000"
+        stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6l16 0" />
+        <path d="M4 12l16 0" />
+        <path d="M4 18l16 0" />
+      </svg>
+    </button>
+
+    <div class="logo">
+      <p (click)="navigateTo('inicio')">Arturo Serrano</p>
+    </div>
+
+    <nav class="nav-principal" [class.activo]="menuAbierto()">
+      <div class="menu-mobile-header">
+        Arturo Serrano
+      </div>
+
+      <a class="enlace" (click)="navigateTo('inicio')">Inicio</a>
+      <a class="enlace" (click)="navigateTo('sobre-mi')">Sobre mí</a>
+      <a class="enlace" (click)="navigateTo('habilidades')">Habilidades</a>
+      <a class="enlace" (click)="navigateTo('proyectos')">Proyectos</a>
+      <a class="enlace" (click)="navigateTo('contacto')">Contacto</a>
+    </nav>
+  </div>
+
+  @if (menuAbierto()) {
+  <div class="overlay" (click)="toggleMenu()"></div>
+  }
 </header>

@@ -88,7 +88,7 @@ body {
   }
 
   #splash-screen div:last-of-type span{
-    margin-left:-355px;
+    width:0px;
     animation: slidein 7s infinite;
   }
 
@@ -103,8 +103,8 @@ body {
   @keyframes slidein {
   0%{margin-left:-800px;}
   20%{margin-left:-800px;}
-  35%{margin-left:0px;}
-  100%{margin-left:0px;}
+  35%{margin-left:-10px;}
+  100%{margin-left:-10px;}
   }
 
   @keyframes reveal {
