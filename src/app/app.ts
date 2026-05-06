@@ -10,16 +10,20 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('portafolio');
 
-    ngOnInit() {
+  ngOnInit() {
+    this.hideSplashScreen();
+  }
 
-    setTimeout(() => {
-      const splash = document.getElementById('splash-screen');
-      if (splash) {
-        splash.style.opacity = '0';
-        splash.style.transition = 'opacity 0.5s';
-        splash.style.overflow = 'hidden';
-        setTimeout(() => splash.remove(), 500);
-      }
-    }, 3500);
+  private hideSplashScreen() {
+    const splash = document.getElementById('splash-screen');
+    if (splash) {
+      splash.style.transition = 'opacity 0.5s ease, visibility 0.5s';
+      splash.style.opacity = '0';
+      splash.style.visibility = 'hidden';
+
+      setTimeout(() => {
+        splash.remove();
+      }, 500);
+    }
   }
 }
