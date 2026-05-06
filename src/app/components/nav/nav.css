@@ -54,6 +54,10 @@
       color: #1a5a34;
       transition: color 0.3s;
       cursor: pointer;
+
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     /* Navegación Escritorio (Default) */
