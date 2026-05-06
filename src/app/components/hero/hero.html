@@ -1,20 +1,20 @@
-<section class="contenedor">
+<section id="inicio" class="contenedor">
   <div class="hero-section">
     <div class="hero-content">
       <h1>Arturo Serrano</h1>
       <h2>Desarrollador Freelance</h2>
       <p>Diseño páginas web modernas y profesionales para ayudarte a vender más y verte mejor en internet.</p>
       <div class="hero-btn">
-        <a routerLink="/modelos">
-          <span>Ver Modelos</span>
+        <a (click)="navigateTo('proyectos')">
+          <span>Ver Proyectos</span>
         </a>
-        <a routerLink="/contacto">
+        <a (click)="navigateTo('contacto')">
           <span>Contáctame</span>
         </a>
       </div>
     </div>
     <div class="hero-icon">
-      <div class="animation">
+      <div class="animation-container">
         <div class="stage">
           <div class="table"></div>
           <div class="pc"></div>

@@ -1,29 +1,32 @@
-/*Selectores*/
-.contenedor {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-.about-header {
-  margin-bottom: 2.5rem;
-}
+    .contenedor {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-.about-header h2 {
-  font-size: 3.5rem;
-  font-weight: 400;
-  margin: 0;
-  color: #000;
-}
+    .models-wrapper {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
 
-.eyebrow {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #287233;
-  margin-bottom: 0.5rem;
-}
+    .about-header {
+      margin-bottom: 2.5rem;
+    }
 
-.models-wrapper {
-  margin-top: 5.5rem;
-}
+    .eyebrow {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #287233;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-header h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 600;
+      margin: 0;
+      color: #1a1a1a;
+    }
+

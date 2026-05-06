@@ -1,48 +1,182 @@
-/* Utilidades */
-.text-center{
-  text-align: center;
-}
+    :host {
+      display: block;
+    }
 
-/* Layout */
-.contenedor-navegacion{
-  background-color: #fff;
-  border-bottom: 1px solid #000000;
-}
+    .contenedor {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-.nav-principal{
-  padding: 2rem 0rem;
-  display: flex;
-  justify-content: space-around;
-}
+    /* Layout Header */
+    .contenedor-navegacion {
+      background-color: #fff;
+      border-bottom: 1px solid #1c1c1c;
+      position: relative;
+      z-index: 1000;
+      animation: slideDown 0.3s ease;
+    }
 
-.contenedor{
-  max-width: 120rem;
-  margin: 0 auto;
-}
+    .sticky-activo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: slideDown 0.3s ease;
+  }
 
-/* Enlaces */
-.enlace{
-  position: relative;
-  text-decoration: none;
-  padding-bottom: 5px;
-}
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 
-/* Línea inferior */
-.enlace::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: black;
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
 
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.35s ease;
-}
+    .logo p {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #000;
+      margin: 0;
+      transition: color 0.3s;
+    }
+    .logo p:hover {
+      color: #1a5a34;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
 
-/* Hover */
-.enlace:hover::after{
-  transform: scaleX(1);
-}
+    /* Navegación Escritorio (Default) */
+    .nav-principal {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .menu-mobile-header {
+      display: none; /* Oculto en escritorio */
+    }
+
+    .enlace {
+      position: relative;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: color 0.3s;
+      cursor: pointer;
+
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .enlace:hover {
+      color: #1a5a34;
+    }
+
+    .enlace::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #1a5a34;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .enlace:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Botón */
+    .btn-menu {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* --- RESPONSIVO (Móvil) --- */
+    @media (max-width: 768px) {
+      .btn-menu {
+        display: flex;
+      }
+
+      .nav-principal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 28rem;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1rem;
+
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1001;
+      }
+
+      .menu-mobile-header {
+        display: block;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #1a5a34;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #1c1c1c;
+        width: 100%;
+      }
+
+
+      .nav-principal.activo {
+        transform: translateX(0);
+      }
+
+      .enlace {
+        font-size: 1.6rem;
+        padding: 0.8rem 0;
+      }
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hero-section {
+        padding: 4rem 2rem;
+        text-align: center;
+    }

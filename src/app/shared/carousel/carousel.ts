@@ -26,61 +26,46 @@ export interface CarouselItem {
 })
 export class Carousel implements OnInit, OnDestroy {
   @Input() items: CarouselItem[] = [];
-
   currentIndex = signal(0);
-  animDir      = signal<'next' | 'prev' | ''>('');
-  hovered      = signal(false);
-  isAnimating  = signal(false);
+  animDir = signal('');
+  hovered = signal(false);
 
   currentItem = computed(() => this.items[this.currentIndex()]);
-  peekLeft    = computed(() => this.items[(this.currentIndex() - 1 + this.items.length) % this.items.length]);
-  peekRight   = computed(() => this.items[(this.currentIndex() + 1) % this.items.length]);
+  peekLeft = computed(() => this.items[(this.currentIndex() - 1 + this.items.length) % this.items.length]);
+  peekRight = computed(() => this.items[(this.currentIndex() + 1) % this.items.length]);
 
-  private autoTimer: ReturnType<typeof setInterval> | null = null;
+  private autoTimer: any;
 
-  ngOnInit(): void {
-    this.autoTimer = setInterval(() => this.next(), 5000);
-  }
+  ngOnInit() { this.resetTimer(); }
+  ngOnDestroy() { if (this.autoTimer) clearInterval(this.autoTimer); }
 
-  ngOnDestroy(): void {
-    if (this.autoTimer) clearInterval(this.autoTimer);
-  }
-
-  next(): void {
-    if (this.isAnimating()) return;
-    this.triggerAnim('next');
+  next() {
+    this.animDir.set('next');
     this.currentIndex.update(i => (i + 1) % this.items.length);
     this.resetTimer();
   }
 
-  prev(): void {
-    if (this.isAnimating()) return;
-    this.triggerAnim('prev');
+  prev() {
+    this.animDir.set('prev');
     this.currentIndex.update(i => (i - 1 + this.items.length) % this.items.length);
     this.resetTimer();
   }
 
-  goTo(index: number): void {
-    if (this.isAnimating() || index === this.currentIndex()) return;
-    const dir = index > this.currentIndex() ? 'next' : 'prev';
-    this.triggerAnim(dir);
-    this.currentIndex.set(index);
+  goTo(idx: number) {
+    this.animDir.set(idx > this.currentIndex() ? 'next' : 'prev');
+    this.currentIndex.set(idx);
     this.resetTimer();
   }
 
-  private triggerAnim(dir: 'next' | 'prev'): void {
-    this.isAnimating.set(true);
-    this.animDir.set(dir);
-    setTimeout(() => {
-      this.animDir.set('');
-      this.isAnimating.set(false);
-    }, 420);
+  toggleHover() {
+    // Para móviles, un click alterna la visibilidad del contenido
+    if (window.innerWidth <= 768) {
+      this.hovered.update(v => !v);
+    }
   }
 
-  private resetTimer(): void {
-    if (this.autoTimer) {
-      clearInterval(this.autoTimer);
-      this.autoTimer = setInterval(() => this.next(), 5000);
-    }
+  private resetTimer() {
+    if (this.autoTimer) clearInterval(this.autoTimer);
+    this.autoTimer = setInterval(() => this.next(), 6000);
   }
 }
