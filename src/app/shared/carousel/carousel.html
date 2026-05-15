@@ -39,9 +39,17 @@
           @if (currentItem().subtitle) {
           <p class="subtitle">{{ currentItem().subtitle }}</p>
           }
-          <div class="cta">
-            <span>Ver proyecto</span>
-          </div>
+
+@if (currentItem().ctaUrl) {
+<a
+    class="cta"
+    [href]="currentItem().ctaUrl"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Ver proyecto
+  </a>
+}
         </div>
       </div>
     </div>

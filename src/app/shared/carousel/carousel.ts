@@ -14,6 +14,7 @@ export interface CarouselItem {
   title: string;
   subtitle?: string;
   tag?: string;
+  ctaUrl?: string; 
 }
 
 @Component({
