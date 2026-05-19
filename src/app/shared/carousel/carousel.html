@@ -40,16 +40,11 @@
           <p class="subtitle">{{ currentItem().subtitle }}</p>
           }
 
-@if (currentItem().ctaUrl) {
-<a
-    class="cta"
-    [href]="currentItem().ctaUrl"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Ver proyecto
-  </a>
-}
+          @if (currentItem().ctaUrl) {
+          <a class="cta" [href]="currentItem().ctaUrl" target="_blank" rel="noopener noreferrer">
+            Ver proyecto
+          </a>
+          }
         </div>
       </div>
     </div>

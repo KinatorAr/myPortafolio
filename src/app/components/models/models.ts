@@ -13,16 +13,16 @@ export class Models {
     {
       imageUrl: '/img/entreRamas.webp',
       title: 'Entre Ramas',
-      subtitle: 'Pagina Web de restaurante con menú interactivo',
+      subtitle: 'Landing Page de restaurante con menú interactivo',
       tag: 'HTML / CSS / JS',
       ctaUrl: 'https://entre-ramas.vercel.app/',
     },
     {
-      imageUrl: 'https://images.unsplash.com/photo-1555993539-1732b0258235?w=900&auto=format&fit=crop',
-      title: 'Luces de la Ciudad',
-      subtitle: 'Dashboard administrativo para gestión de tráfico urbano inteligente.',
-      tag: 'React / UI',
-      ctaUrl: '#',
+      imageUrl: '/img/sazonMio.webp',
+      title: 'Sazón Mío',
+      subtitle: 'Landing Page de restaurante con menú interactivo',
+      tag: 'HTML / CSS / JS',
+      ctaUrl: 'https://sazon-mio.vercel.app/',
     },
     {
       imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&auto=format&fit=crop',
