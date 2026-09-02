@@ -48,7 +48,6 @@
 .description {
   font-size: 1.5rem;
   color: #000;
-  margin-bottom: 3rem;
   line-height: 1.6;
 }
 
@@ -157,9 +156,11 @@
 @media (max-width: 900px) {
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2rem;
   }
 
+  .eyebrow,
+  .about-header h2,
   .whatsapp-title,
   .whatsapp-text {
     text-align: center;
@@ -199,6 +200,8 @@
     padding: 2rem 1.5rem;
   }
 
+  .eyebrow,
+  .about-header h2,
   .whatsapp-title,
   .whatsapp-text {
     text-align: center;
