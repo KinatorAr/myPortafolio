@@ -8,5 +8,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Footer {
-
+    irAWhatsApp() {
+    const telefono = "5212212940553";
+    const mensaje = "Hola, vi tu portafolio y me gustaría platicar sobre un proyecto.";
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  }
 }
