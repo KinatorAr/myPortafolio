@@ -15,7 +15,7 @@
 
     .eyebrow {
       display: block;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -24,7 +24,7 @@
     }
 
     .about-header h2 {
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-size: clamp(3rem, 4vw, 3.5rem);
       font-weight: 600;
       margin: 0;
       color: #1a1a1a;

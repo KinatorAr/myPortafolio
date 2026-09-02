@@ -1,0 +1,71 @@
+<div class="gallery-wrapper">
+
+  @if (availableTags().length > 2) {
+    <div class="filter-bar">
+      @for (tag of availableTags(); track tag) {
+        <button
+          class="filter-btn"
+          [class.active]="activeFilter() === tag"
+          [disabled]="isFiltering()"
+          (click)="setFilter(tag)">
+          {{ tag }}
+        </button>
+      }
+    </div>
+  }
+
+  @if (isFiltering()) {
+    <div class="gallery-grid">
+      @for (skeleton of skeletonArray(); track $index) {
+        <div class="skeleton-card">
+          <div class="skeleton-image shimmer"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line skeleton-tag shimmer"></div>
+            <div class="skeleton-line skeleton-title shimmer"></div>
+            <div class="skeleton-line skeleton-subtitle shimmer"></div>
+            <div class="skeleton-line skeleton-subtitle short shimmer"></div>
+            <div class="skeleton-line skeleton-button shimmer"></div>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="gallery-grid">
+      @for (item of filteredItems(); track item.title) {
+        <article
+          class="project-card"
+          [class.featured]="item.featured"
+          animate.enter="card-enter"
+          [style.animation-delay.ms]="$index * 60">
+
+          <div class="card-image" [style.background-image]="'url(' + item.imageUrl + ')'"></div>
+
+          <div class="card-body">
+            @if (item.tags?.length) {
+              <div class="card-tags">
+                @for (tag of item.tags; track tag) {
+                  <span class="tag-pill">{{ tag }}</span>
+                }
+              </div>
+            }
+
+            <h3 class="card-title">{{ item.title }}</h3>
+
+            @if (item.subtitle) {
+              <p class="card-subtitle">{{ item.subtitle }}</p>
+            }
+
+            @if (item.ctaUrl) {
+              <a class="card-cta" [href]="item.ctaUrl" target="_blank" rel="noopener noreferrer">
+                {{ item.ctaLabel || 'Ver Proyecto' }}
+              </a>
+            }
+          </div>
+        </article>
+      } @empty {
+        <p class="empty-state">No hay proyectos con esa tecnología por ahora.</p>
+      }
+    </div>
+  }
+
+</div>
