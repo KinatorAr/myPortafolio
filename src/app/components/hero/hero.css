@@ -8,7 +8,8 @@
       margin: 0 auto;
       padding: 0 2rem;
     }
-    .hero{
+
+    .hero {
       background-color: #f5f2f1;
     }
 
@@ -931,4 +932,30 @@
       height: 8px;
       background-color: #fff;
       border-radius: 50%;
+    }
+
+    .typewriter {
+      /* evita que el layout salte mientras cambia el largo del texto */
+      min-height: 1.2em;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .cursor {
+      display: inline-block;
+      margin-left: 2px;
+      animation: blink 0.8s step-end infinite;
+      font-weight: 400;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
     }
